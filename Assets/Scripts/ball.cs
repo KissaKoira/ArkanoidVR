@@ -8,7 +8,7 @@ public class ball : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(0, 0, -30);
+        rb.velocity = new Vector3(0, 0, -50);
     }
 
     Vector3 ballPoint;

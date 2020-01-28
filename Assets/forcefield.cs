@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tile : MonoBehaviour
+public class forcefield : MonoBehaviour
 {
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.name == "Ball")
         {
-            Destroy(this.gameObject);
+            this.GetComponent<Animator>().SetTrigger("hit");
         }
     }
 }
