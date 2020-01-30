@@ -5,7 +5,7 @@ using UnityEngine;
 public class testControls : MonoBehaviour
 {
     float rotateSpeed = 100;
-    float moveSpeed = 5;
+    float moveSpeed = 20;
 
     void Update()
     {
