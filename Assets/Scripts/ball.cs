@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ball : MonoBehaviour
 {
+    public GameObject player;
+
     Rigidbody rb;
     void Start()
     {
@@ -11,14 +13,14 @@ public class ball : MonoBehaviour
         //rb.velocity = new Vector3(0, 0, -50);
     }
 
-    float maxVelocity = 40;
-    float gravity = 8f;
+    float maxVelocity = 50;
+    float gravity = 15f;
 
     private void Update()
     {
         if(rb.velocity.z < maxVelocity)
         {
-            rb.velocity -= new Vector3(0, 0, gravity) * Time.deltaTime;
+            rb.velocity -= Vector3.Normalize(this.transform.position - player.transform.position) * gravity * Time.deltaTime;
         }
 
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.y, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.z, -maxVelocity, maxVelocity));
