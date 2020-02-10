@@ -13,6 +13,8 @@ public class MenuController : MonoBehaviour
     public GameObject loseUI;
     public GameObject winUI;
 
+    bool menuActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,17 +28,53 @@ public class MenuController : MonoBehaviour
 
 
     // Method called when game is paused
-    void Paused()
+    public void PauseMenuOpen()
     {
         Time.timeScale = 0f;
 
         pauseMenuUI.SetActive(true);
+        menuActive = true;
+    }
+
+
+    // Method called when exiting pause menu
+    public void PauseMenuClose()
+    {
+        Time.timeScale = 1f;
+
+        pauseMenuUI.SetActive(false);
+        optionsUI.SetActive(false);
+        menuActive = false;
+    }
+
+
+    // Method called when entering options
+    public void OptionsOpen()
+    {
+        optionsUI.SetActive(true);
+    }
+
+
+    // Method called when exiting options
+    public void OptionsClose()
+    {
+        optionsUI.SetActive(false);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetButtonDown("Cancel"))
+        {
+            if(menuActive == false)
+            {
+                PauseMenuOpen();
+            }
+            else
+            {
+                PauseMenuClose();
+            }
+        }
     }
 }
