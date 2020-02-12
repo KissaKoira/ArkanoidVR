@@ -8878,6 +8878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7956e8e2d6c75514787fcfba4adfad2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ball: {fileID: 1625532403}
+  BallToCopy: {fileID: 633201037}
 --- !u!65 &1608062536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8945,7 +8947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608062534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3, y: 27.1, z: 160}
+  m_LocalPosition: {x: 1.3, y: 27.1, z: -57.9}
   m_LocalScale: {x: 74.43, y: 74.43, z: 74.43}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9020,6 +9022,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8001612911b82ea4997bf081a4e3dca6, type: 3}
+--- !u!1 &1625532403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 980ed65f521474c43be6882f34b85797,
+    type: 3}
+  m_PrefabInstance: {fileID: 842831694}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1631630419
 GameObject:
   m_ObjectHideFlags: 0
@@ -10313,7 +10321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 32.32
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10321,7 +10329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -27.43
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalRotation.x
