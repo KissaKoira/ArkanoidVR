@@ -7,22 +7,26 @@ public class PowerUpDublicate : MonoBehaviour
 
     public GameObject Ball;
     public Rigidbody BallToCopy;
+    public float WaitTime = 3f;
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider collision)
     {
-        if(other.gameObject.name == "Ball")
+        if(collision.gameObject.tag == "Ball")
         {
-            Triplicate();
+            StartCoroutine (Triplicate());
+            //Debug.Log("Working!");
         }
 
     }
-    void Triplicate()
+    IEnumerator Triplicate()
     {
-
+        Rigidbody clone;
 
         for (int i = 0; i < 2; i++)
         {
-            Instantiate(BallToCopy, new Vector3(i * 0.5F, 0f, 0f), Quaternion.identity);
+           clone = Instantiate(BallToCopy, new Vector3(i * 0.5F, 0f, 0f), Quaternion.identity);
+
+            yield return new WaitForSeconds(WaitTime);
         }
     
 
