@@ -8,10 +8,15 @@ public class PowerUpHitCounter : MonoBehaviour
 
     void OnTriggerEnter (Collider collision)
     {
-        if (collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == "Ball" && HasHit == 0)
         {
-            HasHit = !HasHit;
-            //CheckCounter();
+            HasHit = 1;
+            Debug.Log(HasHit);
+        }
+        if (collision.gameObject.tag == "Ball" && HasHit == 1)
+        {
+            HasHit = 0;
+            Debug.Log(HasHit);
         }
     }
 /*    void CheckCounter()
