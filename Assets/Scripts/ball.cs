@@ -10,11 +10,15 @@ public class ball : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //rb.velocity = new Vector3(0, 0, -50);
+
+        //test
+        rb.velocity = new Vector3(0, 0, -50);
     }
 
     float maxVelocity = 50;
-    float gravity = 15f;
+
+    //test - def arvo 15
+    float gravity = 0;
 
     private void Update()
     {
@@ -45,6 +49,18 @@ public class ball : MonoBehaviour
             ballPoint = this.transform.position;
         }
         else if (collision.gameObject.tag == "surface_sphere")
+        {
+            Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
+
+            rb.velocity = Vector3.Reflect(rb.velocity, normal) * bounciness;
+
+            ballPoint = this.transform.position;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.tag == "surface_sphere_inverted")
         {
             Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
 
