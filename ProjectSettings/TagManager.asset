@@ -9,6 +9,7 @@ TagManager:
   - surface_sphere
   - PowerUp
   - Ball
+  - surface_sphere_inverted
   layers:
   - Default
   - TransparentFX
