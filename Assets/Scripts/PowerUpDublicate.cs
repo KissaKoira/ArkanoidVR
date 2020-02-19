@@ -9,16 +9,19 @@ public class PowerUpDublicate : MonoBehaviour
     public Rigidbody BallToCopy;
     public float WaitTime = 3f;
 
+    public bool IsHit = false;
+
     public void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Ball")
         {
-            StartCoroutine (Triplicate());
-            //Debug.Log("Working!");
+            IsHit = true;
+            //StartCoroutine (Triplicate());
+            Debug.Log("Working!");
         }
 
     }
-    IEnumerator Triplicate()
+    /*IEnumerator Triplicate()
     {
         Rigidbody clone;
 
@@ -31,6 +34,6 @@ public class PowerUpDublicate : MonoBehaviour
     
 
     
-    }
+    } */
 
 }
