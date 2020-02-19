@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpHitCounter : MonoBehaviour
+public class PowerUpHitCube : MonoBehaviour
 {
+public bool IsHitCube = false;
 
-    public PowerUpDublicate pUD;
-
-    void update()
+    public void OnTriggerEnter(Collider collision)
     {
-        if(pUD.IsHit)
+        if(collision.gameObject.tag == "Ball")
         {
-            Debug.Log("Everything is true");
+            IsHitCube = true;
+            //StartCoroutine (Triplicate());
+            Debug.Log("Working!");
         }
+   
     }
 /*    int HasHit = 0;
 

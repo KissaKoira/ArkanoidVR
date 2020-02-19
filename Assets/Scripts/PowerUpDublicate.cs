@@ -21,6 +21,7 @@ public class PowerUpDublicate : MonoBehaviour
         }
 
     }
+    
     /*IEnumerator Triplicate()
     {
         Rigidbody clone;
