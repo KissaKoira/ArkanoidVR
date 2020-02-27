@@ -14,10 +14,10 @@ public PowerUpHitCube pUHCube;
     {
         if(pUSph.IsHitSphere && pUCyl.IsHitCylinder && pUHCube.IsHitCube)
         {
-        /*    Triplicate();
-            IsHitSphere == false;
-            IsHitCylinder == false;
-            IsHitCube == false;
+            Triplicate();
+            IsHitSphere = false;
+            IsHitCylinder = false;
+            IsHitCube = false;
         }
     }
 
@@ -33,5 +33,5 @@ public PowerUpHitCube pUHCube;
             //yield return new WaitForSeconds(WaitTime);
 
         }
-    } */
+    } 
 }
