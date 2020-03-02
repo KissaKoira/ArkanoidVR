@@ -7,9 +7,14 @@ using UnityEngine.EventSystems;
 
 public class MenuController : MonoBehaviour
 {
-    // Does GameObject stuff
-    public GameObject pauseMenuUI;
+    // GameObject stuff
+    public GameObject mainMenuUI;
+    public GameObject levelSelectUI;
     public GameObject optionsUI;
+    public GameObject creditsUI;
+    public GameObject exitUI;
+    
+    public GameObject pauseMenuUI;
     public GameObject loseUI;
     public GameObject winUI;
 
@@ -20,10 +25,68 @@ public class MenuController : MonoBehaviour
     {
         Time.timeScale = 1f;
 
+        //mainMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
+        levelSelectUI.SetActive(false);
         optionsUI.SetActive(false);
+        creditsUI.SetActive(false);
+        exitUI.SetActive(false);
         loseUI.SetActive(false);
         winUI.SetActive(false);
+    }
+
+    // Method called when entering main menu
+    public void MainMenu()
+    {
+        mainMenuUI.SetActive(true);
+
+        optionsUI.SetActive(false);
+        creditsUI.SetActive(false);
+        levelSelectUI.SetActive(false);
+        exitUI.SetActive(false);
+    }
+
+
+    // Method called when entering level select
+    public void LevelSelect()
+    {
+        levelSelectUI.SetActive(true);
+        mainMenuUI.SetActive(false);
+    }
+
+
+    // Method called when entering options
+    public void OptionsOpen()
+    {
+        optionsUI.SetActive(true);
+        mainMenuUI.SetActive(false);
+    }
+
+    // Method called when exiting options
+    public void OptionsClose()
+    {
+        optionsUI.SetActive(false);
+    }
+
+
+    // Method called when opening credits
+    public void Credits()
+    {
+        creditsUI.SetActive(true);
+        mainMenuUI.SetActive(false);
+    }
+
+
+    // Method called when selecting exit
+    public void Exit()
+    {
+        exitUI.SetActive(true);
+    }
+
+    // Method called when closing the game
+    public void TerminateGame()
+    {
+        // Enter game closing code here
     }
 
 
@@ -36,7 +99,6 @@ public class MenuController : MonoBehaviour
         menuActive = true;
     }
 
-
     // Method called when exiting pause menu
     public void PauseMenuClose()
     {
@@ -45,20 +107,6 @@ public class MenuController : MonoBehaviour
         pauseMenuUI.SetActive(false);
         optionsUI.SetActive(false);
         menuActive = false;
-    }
-
-
-    // Method called when entering options
-    public void OptionsOpen()
-    {
-        optionsUI.SetActive(true);
-    }
-
-
-    // Method called when exiting options
-    public void OptionsClose()
-    {
-        optionsUI.SetActive(false);
     }
 
 
