@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerUpHitSphere : MonoBehaviour
 {
 public bool IsHitSphere = false;
+public static PowerUpHitSphere instance;
 
     public void OnTriggerEnter(Collider collision)
     {
@@ -14,6 +15,10 @@ public bool IsHitSphere = false;
             //StartCoroutine (Triplicate());
             Debug.Log("Working!");
         }
+}
+void start()
+{
+    instance = this;
 }
 
 }

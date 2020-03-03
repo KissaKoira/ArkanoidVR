@@ -12,26 +12,29 @@ public PowerUpHitCube pUHCube;
 
     void Update()
     {
+        //jos sylinteriin, palloon ja kuutioon on osuttu
         if(pUSph.IsHitSphere && pUCyl.IsHitCylinder && pUHCube.IsHitCube)
         {
             Triplicate();
-            IsHitSphere = false;
-            IsHitCylinder = false;
-            IsHitCube = false;
+            //should change booleans back to false but does not do that
+            PowerUpHitSphere.instance.IsHitSphere = false;
+            PowerUpHitCylinder.instance.IsHitCylinder = false;
+            PowerUpHitCube.instance.IsHitCube = false;
         }
     }
 
+//Triplicate makes more balls but its infinite right now because upper if wont work
     void Triplicate()
 
     {
         Rigidbody clone;
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 1; i++)
         {
            clone = Instantiate(BallToCopy, new Vector3(i * 0.5F, 0f, 0f), Quaternion.identity);
 
             //yield return new WaitForSeconds(WaitTime);
-
+        break;
         }
     } 
 }

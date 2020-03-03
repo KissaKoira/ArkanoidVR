@@ -6,6 +6,8 @@ public class PowerUpHitCube : MonoBehaviour
 {
 public bool IsHitCube = false;
 
+public static PowerUpHitCube instance;
+
     public void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Ball")
@@ -16,6 +18,12 @@ public bool IsHitCube = false;
         }
    
     }
+
+    void start()
+{
+    instance = this;
+}
+
 /*    int HasHit = 0;
 
     void OnTriggerEnter (Collider collision)

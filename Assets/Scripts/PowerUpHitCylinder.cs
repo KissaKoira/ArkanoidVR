@@ -6,6 +6,8 @@ public class PowerUpHitCylinder : MonoBehaviour
 {
 public bool IsHitCylinder = false;
 
+public static PowerUpHitCylinder instance;
+
     public void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Ball")
@@ -15,4 +17,10 @@ public bool IsHitCylinder = false;
             Debug.Log("Working!");
         }
 }
+
+void start()
+{
+    instance = this;
+}
+
 }
