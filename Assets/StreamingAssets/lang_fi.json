@@ -1,0 +1,26 @@
+{
+	"items":[
+		{"key":"mainmenu","value":"Valikko"},
+		{"key":"play","value":"Pelaa"},
+		{"key":"options","value":"Asetukset"},
+		{"key":"credits","value":"Tekijät"},
+		{"key":"exit","value":"Poistu"},
+		{"key":"back","value":"Palaa"},
+		{"key":"vol","value":"Äänenvoimakkuus"},
+		{"key":"music","value":"Musiikki"},
+		{"key":"sound","value":"Äänet"},
+		{"key":"racket","value":"Maila"},
+		{"key":"lang","value":"Kieli"},
+		{"key":"rh","value":"Oikea käsi"},
+		{"key":"lh","value":"Vasen käsi"},
+		{"key":"r","value":"Oikea"},
+		{"key":"l","value":"Vasen"},
+		{"key":"exit_msg","value":"Oletko varma, että haluat poistua pelistä?"},
+		{"key":"y","value":"Kyllä"},
+		{"key":"n","value":"Ei"},
+		{"key":"paused","value":"Tauko"},
+		{"key":"resume","value":"Jatka"},
+		{"key":"restart","value":"Aloita uudelleen"},
+		{"key":"quit","value":"Lopeta"}
+	]
+}
