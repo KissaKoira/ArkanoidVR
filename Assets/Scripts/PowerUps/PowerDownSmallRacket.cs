@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PowerDownSmallRacket : MonoBehaviour
 {
-    public float multiplier = 1.5f;
+    public float multiplier = 0.5f;
     public float duration = 2.0f;
+    public Rigidbody Racket;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Ball")
@@ -17,14 +18,17 @@ public class PowerDownSmallRacket : MonoBehaviour
         }
 
     }
-    //makes ball bigger
+    //makes racket smaller
     IEnumerator SmallRacket(Collider Ball)
     {
+                Debug.Log("Smaller Racket");
 
         Racket.transform.localScale *= multiplier;
 
         yield return new WaitForSeconds(duration);
 
         Racket.transform.localScale /= multiplier;
+
+
     }
 }
