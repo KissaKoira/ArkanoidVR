@@ -7,11 +7,12 @@ public class PowerDownSmallRacket : MonoBehaviour
     public float multiplier = 0.5f;
     public float duration = 2.0f;
     public Rigidbody Racket;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Ball")
         {
-            GetComponent<Animator>().SetTrigger("Hit");
+            //GetComponent<Animator>().SetTrigger("Hit");
 
             StartCoroutine(SmallRacket(other));
 
@@ -19,9 +20,9 @@ public class PowerDownSmallRacket : MonoBehaviour
 
     }
     //makes racket smaller
-    IEnumerator SmallRacket(Collider Ball)
+    IEnumerator SmallRacket(Collider other)
     {
-                Debug.Log("Smaller Racket");
+        //Debug.Log("Smaller Racket");
 
         Racket.transform.localScale *= multiplier;
 
