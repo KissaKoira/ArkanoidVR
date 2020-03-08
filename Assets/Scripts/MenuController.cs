@@ -97,6 +97,7 @@ public class MenuController : MonoBehaviour
 
         pauseMenuUI.SetActive(true);
         menuActive = true;
+        Debug.Log("auki");
     }
 
     // Method called when exiting pause menu
@@ -105,8 +106,9 @@ public class MenuController : MonoBehaviour
         Time.timeScale = 1f;
 
         pauseMenuUI.SetActive(false);
-        optionsUI.SetActive(false);
+        //optionsUI.SetActive(false);
         menuActive = false;
+        Debug.Log("sulki");
     }
 
 
