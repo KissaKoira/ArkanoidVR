@@ -10,7 +10,7 @@ public class ball : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //rb.velocity = new Vector3(0, 0, -50);
+        //rb.velocity = new Vector3(0, -10, 0);
     }
 
     float maxVelocity = 50;
@@ -18,9 +18,14 @@ public class ball : MonoBehaviour
 
     private void Update()
     {
-        if(rb.velocity.z < maxVelocity)
+        if (Input.GetButtonDown("test"))
         {
-            rb.velocity -= Vector3.Normalize(this.transform.position - player.transform.position) * gravity * Time.deltaTime;
+            GetComponent<Rigidbody>().velocity = new Vector3(0, -10, 0);
+        }
+
+        if (rb.velocity.z < maxVelocity)
+        {
+            //rb.velocity -= Vector3.Normalize(this.transform.position - player.transform.position) * gravity * Time.deltaTime;
         }
 
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.y, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.z, -maxVelocity, maxVelocity));
@@ -45,6 +50,18 @@ public class ball : MonoBehaviour
             ballPoint = this.transform.position;
         }
         else if (collision.gameObject.tag == "surface_sphere")
+        {
+            Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
+
+            rb.velocity = Vector3.Reflect(rb.velocity, normal) * bounciness;
+
+            ballPoint = this.transform.position;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.tag == "surface_reversesphere")
         {
             Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
 
