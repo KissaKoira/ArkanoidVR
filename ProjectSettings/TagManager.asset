@@ -9,7 +9,11 @@ TagManager:
   - surface_sphere
   - PowerUp
   - Ball
+<<<<<<< HEAD
   - surface_sphere_inverted
+=======
+  - surface_reversesphere
+>>>>>>> mergeBranch
   layers:
   - Default
   - TransparentFX
