@@ -227,6 +227,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4255182783446148974, guid: 53f643cefb850954e88824aec837c332,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255182783446148974, guid: 53f643cefb850954e88824aec837c332,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255182783446148974, guid: 53f643cefb850954e88824aec837c332,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4789912306408716186, guid: 53f643cefb850954e88824aec837c332,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -424,7 +439,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1482173975}
+      objectReference: {fileID: 0}
     - target: {fileID: 4255182783446148974, guid: 53f643cefb850954e88824aec837c332,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -665,6 +680,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4255182783446148974, guid: 53f643cefb850954e88824aec837c332,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255182783446148974, guid: 53f643cefb850954e88824aec837c332,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255182783446148974, guid: 53f643cefb850954e88824aec837c332,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4789912306408716186, guid: 53f643cefb850954e88824aec837c332,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -807,15 +837,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482173970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dad8aee299e02bc40b63cf53e2593ab3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1140489529c614c459c8c80be6d5caac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuUI: {fileID: 0}
-  levelSelectUI: {fileID: 0}
-  optionsUI: {fileID: 0}
-  creditsUI: {fileID: 0}
-  exitUI: {fileID: 0}
   pauseMenuUI: {fileID: 2146703354}
+  optionsUI: {fileID: 0}
   loseUI: {fileID: 0}
   winUI: {fileID: 0}
 --- !u!1 &1596075955
