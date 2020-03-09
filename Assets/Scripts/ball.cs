@@ -10,19 +10,11 @@ public class ball : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-<<<<<<< HEAD
-
-        //test
-        rb.velocity = new Vector3(0, 0, -50);
-=======
         //rb.velocity = new Vector3(0, -10, 0);
->>>>>>> mergeBranch
     }
 
     float maxVelocity = 50;
-
-    //test - def arvo 15
-    float gravity = 0;
+    float gravity = 15f;
 
     private void Update()
     {
@@ -69,11 +61,7 @@ public class ball : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-<<<<<<< HEAD
-        if (collision.gameObject.tag == "surface_sphere_inverted")
-=======
         if (collision.gameObject.tag == "surface_reversesphere")
->>>>>>> mergeBranch
         {
             Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
 
