@@ -44,6 +44,22 @@ public class MainMenuManager : MonoBehaviour
     {
         levelSelectUI.SetActive(true);
         mainMenuUI.SetActive(false);
+        levelInfoUI.SetActive(false);
+    }
+
+
+    // Method called when selecting a level
+    public void LevelInfo()
+    {
+        levelSelectUI.SetActive(false);
+        levelInfoUI.SetActive(true);
+    }
+
+
+    // Method called when entering a game scene
+    public void EnterLevel()
+    {
+        // koodii tähän
     }
 
 
