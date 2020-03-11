@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5165902739023479666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959056417834112138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65745d5c711d6ba4b906b38aed2f0ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: lang_value
 --- !u!1 &5165902738005174556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,19 +1841,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5165902739023479666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3959056417834112138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65745d5c711d6ba4b906b38aed2f0ed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: lang_value
 --- !u!1 &5165902739076574132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3662,7 +3662,7 @@ PrefabInstance:
     - target: {fileID: 8160977712963246078, guid: ea023e8004d958d458a3c9f74c689490,
         type: 3}
       propertyPath: m_Name
-      value: Language Value
+      value: Text (TMP)
       objectReference: {fileID: 0}
     - target: {fileID: 8753788519575614012, guid: ea023e8004d958d458a3c9f74c689490,
         type: 3}
@@ -3709,6 +3709,11 @@ PrefabInstance:
       propertyPath: m_textAlignment
       value: 514
       objectReference: {fileID: 0}
+    - target: {fileID: 8753788519575614012, guid: ea023e8004d958d458a3c9f74c689490,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8996378115904673948, guid: ea023e8004d958d458a3c9f74c689490,
         type: 3}
       propertyPath: m_PreserveAspect
@@ -3731,15 +3736,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea023e8004d958d458a3c9f74c689490, type: 3}
---- !u!1 &3959056417834112138 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8160977712963246078, guid: ea023e8004d958d458a3c9f74c689490,
-    type: 3}
-  m_PrefabInstance: {fileID: 5165902739023479668}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5393909795024973064 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 967145042043006588, guid: ea023e8004d958d458a3c9f74c689490,
+    type: 3}
+  m_PrefabInstance: {fileID: 5165902739023479668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3959056417834112138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8160977712963246078, guid: ea023e8004d958d458a3c9f74c689490,
     type: 3}
   m_PrefabInstance: {fileID: 5165902739023479668}
   m_PrefabAsset: {fileID: 0}
