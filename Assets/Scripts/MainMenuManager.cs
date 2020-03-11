@@ -59,7 +59,7 @@ public class MainMenuManager : MonoBehaviour
     // Method called when entering a game scene
     public void EnterLevel()
     {
-        // koodii tähän
+        SceneManager.LoadScene("stage1");
     }
 
 
