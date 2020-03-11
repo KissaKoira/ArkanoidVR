@@ -94,7 +94,7 @@ public class MainMenuManager : MonoBehaviour
     // Method called when closing the game
     public void TerminateGame()
     {
-        // Enter game closing code here //
+        SceneManager.LoadScene("Title Screen"); // Korvaa tää jollaa mikä oikeest sulkee pelin
     }
 
     // Update is called once per frame

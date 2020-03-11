@@ -8,7 +8,7 @@ public class LocalizationManager : MonoBehaviour
     public static LocalizationManager instance;
     private Dictionary<string, string> localizedText;
     private bool isReady = false;
-    private string missingTextString = "Localized text 404";
+    private string missingTextString = "404";
     
     // Start is called before the first frame update
     void Awake()
@@ -40,7 +40,6 @@ public class LocalizationManager : MonoBehaviour
                 localizedText.Add(loadedData.items[i].key, loadedData.items[i].value);
             }
             Debug.Log("Data loaded, dictionary contains: " + localizedText.Count + " entries");
-            //Debug.Log(localizedText);
         }
         else
         {
@@ -53,7 +52,6 @@ public class LocalizationManager : MonoBehaviour
     public string GetLocalizedValue(string key)
     {
         string result = missingTextString;
-        Debug.Log(localizedText.Count);
         if(localizedText.ContainsKey(key))
         {
             result = localizedText[key];

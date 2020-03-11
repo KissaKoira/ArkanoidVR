@@ -11,7 +11,6 @@ public class LocalizedText : MonoBehaviour
     void Start()
     {
         TextMeshProUGUI text = GetComponent<TextMeshProUGUI>();
-        Debug.Log(text);
         text.text = LocalizationManager.instance.GetLocalizedValue(key);
     }
 }
