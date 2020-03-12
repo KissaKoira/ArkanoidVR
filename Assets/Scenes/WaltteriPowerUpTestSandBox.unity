@@ -5853,12 +5853,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1109214545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8581747c201f6374d87dce40762b3642, type: 3}
+  m_Script: {fileID: 11500000, guid: ca394adf5c8334e46b368dee5ff57814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 2
-  duration: 5
-  Racket: {fileID: 707612754}
+  duration: 10
 --- !u!65 &1109214547
 BoxCollider:
   m_ObjectHideFlags: 0
