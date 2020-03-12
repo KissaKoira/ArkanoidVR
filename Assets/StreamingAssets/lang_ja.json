@@ -32,7 +32,8 @@
 			{"key":"level","value":"レベル"},
 			{"key":"score","value":"スコア"},
 			{"key":"highscore","value":"ハイスコア"},
-			{"key":"start","value":"始める"},
+			{"key":"start","value":"開始"},
+			{"key":"title_prompt","value":"ボタンを押してください"},
 			{"key":"","value":""}
 
 		]

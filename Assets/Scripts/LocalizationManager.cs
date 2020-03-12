@@ -64,4 +64,9 @@ public class LocalizationManager : MonoBehaviour
     {
         return isReady;
     }
+
+    void Update()
+    {
+
+    }
 }

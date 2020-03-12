@@ -33,6 +33,7 @@
 			{"key":"score","value":"Score"},
 			{"key":"highscore","value":"High Score"},
 			{"key":"start","value":"Start"},
+			{"key":"title_prompt","value":"Press any button"},
 			{"key":"","value":""}
 
 		]
