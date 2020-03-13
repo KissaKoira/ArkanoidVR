@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 
 public class TitleManager : MonoBehaviour
 {
-    //public GameObject titleScreenUI;
+    private string languageFile;
+    public LocalizationManager manager;
     
     // Start is called before the first frame update
     void Start()
@@ -15,43 +16,45 @@ public class TitleManager : MonoBehaviour
         if (Application.systemLanguage == SystemLanguage.English)
         {
             Debug.Log("English");
-            //lang_en.json
+            languageFile = "lang_en.json";
         }
         else if (Application.systemLanguage == SystemLanguage.Finnish)
         {
             Debug.Log("Finnish");
-            //lang_fi.json
+            languageFile = "lang_fi.json";
         }
         else if (Application.systemLanguage == SystemLanguage.Portuguese)
         {
             Debug.Log("Portuguese");
-            //lang_pt.json
+            languageFile = "lang_pt.json";
         }
         else if (Application.systemLanguage == SystemLanguage.German)
         {
             Debug.Log("German");
-            //lang_de.json
+            languageFile = "lang_de.json";
         }
         else if (Application.systemLanguage == SystemLanguage.Japanese)
         {
             Debug.Log("Japanese");
-            //lang_ja.json
+            languageFile = "lang_ja.json";
         }
         else if (Application.systemLanguage == SystemLanguage.Russian)
         {
             Debug.Log("Russian");
-            //lang_ru.json
+            languageFile = "lang_ru.json";
         }
         else
         {
-            Debug.Log("Language not supported");
-            //lang_en.json
+            Debug.Log("Unsupported language");
+            languageFile = "lang_en.json";
         }
     }
 
-    // Method called when moving to Main Menu
-    public void MainMenu()
+    void Update()
     {
-        SceneManager.LoadScene("Main Menu");
+        if (Input.anyKey)
+        {
+            manager.LoadLocalizedText(languageFile);
+        }
     }
 }

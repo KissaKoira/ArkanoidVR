@@ -22,7 +22,7 @@
 			{"key":"n","value":"いいえ"},
 			{"key":"paused","value":"止まった"},
 			{"key":"resume","value":"つづける"},
-			{"key":"restart","value":"リスタート"},
+			{"key":"restart","value":"はじめから"},
 			{"key":"quit","value":"やめる"},
 			{"key":"lose","value":"負けた"},
 			{"key":"win","value":"勝利！"},
