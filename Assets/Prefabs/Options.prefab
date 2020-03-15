@@ -3308,6 +3308,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: lang_pt.json
       objectReference: {fileID: 0}
+    - target: {fileID: 4479034047816392, guid: ea023e8004d958d458a3c9f74c689490, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 967145042043006588, guid: ea023e8004d958d458a3c9f74c689490,
         type: 3}
       propertyPath: m_LocalPosition.x
