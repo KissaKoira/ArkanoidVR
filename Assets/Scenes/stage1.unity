@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 129071684}
   m_Layer: 0
   m_Name: tree1 (8)
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1867,7 +1867,7 @@ GameObject:
   - component: {fileID: 270580729}
   m_Layer: 0
   m_Name: tree1 (3)
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2182,7 +2182,7 @@ GameObject:
   - component: {fileID: 345643652}
   m_Layer: 0
   m_Name: tree1 (5)
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2513,6 +2513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trihead guy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1f4600f8c3e31e947aa3043867d34d5b,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4600f8c3e31e947aa3043867d34d5b, type: 3}
@@ -3309,7 +3314,7 @@ GameObject:
   - component: {fileID: 596630048}
   m_Layer: 0
   m_Name: tree1 (6)
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4228,7 +4233,7 @@ GameObject:
   - component: {fileID: 707612760}
   m_Layer: 0
   m_Name: Racket
-  m_TagString: Untagged
+  m_TagString: racket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4335,6 +4340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc157384c3d6c50438359ec2dd63a150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 932803518}
 --- !u!114 &707612760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4574,6 +4580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: egg
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b81770cb935b27a4eb6abac2adbb3cc2,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b81770cb935b27a4eb6abac2adbb3cc2, type: 3}
@@ -6745,7 +6756,7 @@ GameObject:
   - component: {fileID: 1176580911}
   m_Layer: 0
   m_Name: tree1 (7)
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6917,7 +6928,7 @@ GameObject:
   - component: {fileID: 1209319922}
   m_Layer: 0
   m_Name: tree1 (1)
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7893,6 +7904,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trihead guy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1f4600f8c3e31e947aa3043867d34d5b,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4600f8c3e31e947aa3043867d34d5b, type: 3}
@@ -9679,7 +9695,7 @@ GameObject:
   - component: {fileID: 1593318717}
   m_Layer: 0
   m_Name: tree1 (2)
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10040,7 +10056,7 @@ GameObject:
   - component: {fileID: 1625799383}
   m_Layer: 0
   m_Name: tree1 (4)
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10764,6 +10780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trihead guy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1f4600f8c3e31e947aa3043867d34d5b,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4600f8c3e31e947aa3043867d34d5b, type: 3}
@@ -12676,6 +12697,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: trihead guy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1f4600f8c3e31e947aa3043867d34d5b,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4600f8c3e31e947aa3043867d34d5b, type: 3}
 --- !u!1 &1986016061
@@ -13725,6 +13751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trihead guy
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1f4600f8c3e31e947aa3043867d34d5b,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4600f8c3e31e947aa3043867d34d5b, type: 3}
