@@ -41,9 +41,15 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
 
         pauseMenuUI.SetActive(false);
-        //optionsUI.SetActive(false);
+        optionsUI.SetActive(false);
         menuActive = false;
         Debug.Log("sulki");
+    }
+
+    // Method called when restarting level
+    public void Restart()
+    {
+        SceneManager.LoadScene("stage1");
     }
 
     // Method called when entering options
@@ -61,7 +67,7 @@ public class UIManager : MonoBehaviour
     // Method called when going to main menu
     public void MainMenu()
     {
-        // Tähän main menu siirtymäriitti //
+        SceneManager.LoadScene("Main Menu");
     }
 
     // Update is called once per frame

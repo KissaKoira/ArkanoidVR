@@ -44,6 +44,22 @@ public class MainMenuManager : MonoBehaviour
     {
         levelSelectUI.SetActive(true);
         mainMenuUI.SetActive(false);
+        levelInfoUI.SetActive(false);
+    }
+
+
+    // Method called when selecting a level
+    public void LevelInfo()
+    {
+        levelSelectUI.SetActive(false);
+        levelInfoUI.SetActive(true);
+    }
+
+
+    // Method called when entering a game scene
+    public void EnterLevel()
+    {
+        SceneManager.LoadScene("stage1");
     }
 
 
@@ -78,7 +94,7 @@ public class MainMenuManager : MonoBehaviour
     // Method called when closing the game
     public void TerminateGame()
     {
-        // Enter game closing code here //
+        SceneManager.LoadScene("Title Screen"); // Korvaa tää jollaa mikä oikeest sulkee pelin
     }
 
     // Update is called once per frame
