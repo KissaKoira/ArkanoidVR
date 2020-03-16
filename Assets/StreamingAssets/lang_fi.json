@@ -12,6 +12,7 @@
 			{"key":"music","value":"Musiikki"},
 			{"key":"sound","value":"Äänet"},
 			{"key":"racket","value":"Maila"},
+			{"key":"handedness","value":"Kätisyys"},
 			{"key":"lang","value":"Kieli"},
 			{"key":"rh","value":"Oikea\nkäsi"},
 			{"key":"lh","value":"Vasen\nkäsi"},

@@ -29,21 +29,21 @@ public class UIManager : MonoBehaviour
     public void PauseMenuOpen()
     {
         Time.timeScale = 0f;
+        Debug.Log("Game is paused");
 
         pauseMenuUI.SetActive(true);
         menuActive = true;
-        Debug.Log("auki");
     }
 
     // Method called when exiting pause menu
     public void PauseMenuClose()
     {
         Time.timeScale = 1f;
+        Debug.Log("No longer paused");
 
         pauseMenuUI.SetActive(false);
         optionsUI.SetActive(false);
         menuActive = false;
-        Debug.Log("sulki");
     }
 
     // Method called when restarting level

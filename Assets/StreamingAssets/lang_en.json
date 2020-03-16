@@ -12,6 +12,7 @@
 			{"key":"music","value":"Music"},
 			{"key":"sound","value":"Sound"},
 			{"key":"racket","value":"Racket"},
+			{"key":"handedness","value":"Handedness"},
 			{"key":"lang","value":"Language"},
 			{"key":"rh","value":"Right-\nhand"},
 			{"key":"lh","value":"Left-\nhand"},
