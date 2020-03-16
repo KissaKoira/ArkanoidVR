@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class testControls : MonoBehaviour
 {
-    float rotateSpeed = 100;
+    float rotateSpeed = 200;
     float moveSpeed = 2;
+
+    public GameObject cam;
 
     void Update()
     {
         //racket movement
-
-        transform.position += new Vector3(Input.GetAxis("Mouse X") * 0.5f, Input.GetAxis("Mouse Y") * 0.5f, 0);
+        if (Input.GetButton("Fire2"))
+        {
+            Quaternion camRot = cam.transform.rotation;
+            cam.transform.Rotate(new Vector3(camRot.x, Input.GetAxis("Mouse X"), camRot.z));
+        }
+        else
+        {
+            transform.position += new Vector3(Input.GetAxis("Mouse X") * 0.05f, Input.GetAxis("Mouse Y") * 0.05f, 0);
+        }
+        
 
         if (Input.GetButton("Jump"))
         {
@@ -59,6 +69,11 @@ public class testControls : MonoBehaviour
             Rigidbody ballRB = collision.gameObject.GetComponent<Rigidbody>();
 
             ballRB.velocity = Vector3.Reflect(ballRB.velocity, transform.forward) + this.GetComponent<Rigidbody>().velocity;
+            //ballRB.velocity = cam.transform.forward * 5;
+
+            //Vector3 point = cam.transform.forward * 10f;
+            Vector3 point = GameObject.Find("egg").transform.position;
+            collision.gameObject.GetComponent<ball>().curve(point);
         }
     }
 }

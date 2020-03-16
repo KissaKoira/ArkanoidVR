@@ -16,6 +16,11 @@ public class ball : MonoBehaviour
     float maxVelocity = 50;
     float gravity = 15f;
 
+    Vector3 nullPoint = new Vector3(0, 0, 0);
+    Vector3 curvePoint = new Vector3(0, 0, 0);
+
+    int goingRight = 0;
+
     private void Update()
     {
         if (Input.GetButtonDown("test"))
@@ -29,6 +34,17 @@ public class ball : MonoBehaviour
         }
 
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.y, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.z, -maxVelocity, maxVelocity));
+
+        //curve towards a point set on contact with racket
+        if(curvePoint != nullPoint)
+        {
+            Vector3 direction = curvePoint - transform.position;
+            Vector3 velocity = GetComponent<Rigidbody>().velocity;
+            float speed = velocity.magnitude * 0.3f * Time.deltaTime;
+
+            Vector3 newVelocity = Vector3.RotateTowards(velocity, direction, speed, 0.0f);
+            GetComponent<Rigidbody>().velocity = newVelocity;
+        }
     }
 
     Vector3 ballPoint;
@@ -73,7 +89,12 @@ public class ball : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(ballPoint, 1);
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawSphere(ballPoint, 1);
+    }
+
+    public void curve(Vector3 point)
+    {
+        curvePoint = point;
     }
 }
