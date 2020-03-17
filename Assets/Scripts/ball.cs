@@ -14,7 +14,7 @@ public class ball : MonoBehaviour
     }
 
     float maxVelocity = 50;
-    float gravity = 0.5f;
+    float gravity = 1f;
 
     Vector3 nullPoint = new Vector3(0, 0, 0);
     Vector3 curvePoint = new Vector3(0, 0, 0);
@@ -85,12 +85,13 @@ public class ball : MonoBehaviour
         else if (collision.gameObject.tag == "object")
         {
             Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
+            Vector3 reflected = Vector3.Reflect(rb.velocity, normal);
 
-            rb.velocity = Vector3.Reflect(rb.velocity, normal) * bounciness;
+            rb.velocity = new Vector3(reflected.x, rb.velocity.y, reflected.z) * bounciness;
 
             ballPoint = this.transform.position;
 
-            if(collision.gameObject.name.Contains("trihead guy"))
+            if (collision.gameObject.name.Contains("trihead guy"))
             {
                 collision.transform.parent.gameObject.SetActive(false);
             }

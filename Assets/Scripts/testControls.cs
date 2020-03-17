@@ -12,16 +12,7 @@ public class testControls : MonoBehaviour
     void Update()
     {
         //racket movement
-        if (Input.GetButton("Fire2"))
-        {
-            Quaternion camRot = cam.transform.rotation;
-            cam.transform.Rotate(new Vector3(camRot.x, Input.GetAxis("Mouse X"), camRot.z));
-        }
-        else
-        {
-            transform.position += new Vector3(Input.GetAxis("Mouse X") * 0.05f, Input.GetAxis("Mouse Y") * 0.05f, 0);
-        }
-        
+        transform.Rotate(Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0);
 
         if (Input.GetButton("Jump"))
         {
@@ -35,16 +26,9 @@ public class testControls : MonoBehaviour
             transform.Rotate(new Vector3(rotateSpeed * -1 * Time.deltaTime, 0, 0));
         }
 
-        if (Input.GetAxisRaw("Horizontal") > 0)
-        {
-            //right
-            transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0));
-        }
-        else if(Input.GetAxisRaw("Horizontal") < 0)
-        {
-            //left
-            transform.Rotate(new Vector3(0, rotateSpeed * -1 * Time.deltaTime, 0));
-        }
+        //left - right
+        Quaternion camRot = cam.transform.rotation;
+        cam.transform.Rotate(new Vector3(camRot.x, Input.GetAxisRaw("Horizontal"), camRot.z));
 
         if (Input.GetAxisRaw("Vertical") > 0)
         {
