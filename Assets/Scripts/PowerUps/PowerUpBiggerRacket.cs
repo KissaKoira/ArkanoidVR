@@ -7,8 +7,16 @@ public class PowerUpBiggerRacket : MonoBehaviour
     public float multiplier = 2.0f;
     public float duration = 2.0f;
     public Rigidbody Racket;
-    public gameObject trihead_guy;
+    public GameObject trihead_guy;
 
+
+void start()
+{
+    ;
+    trihead_guy.transform.Find("head1");
+    trihead_guy.transform.Find("head2");
+
+}
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Ball")
@@ -26,8 +34,10 @@ public class PowerUpBiggerRacket : MonoBehaviour
 
         Racket.transform.localScale *= multiplier;
 
-        trihead_guy.Transform.Find("body");
-        GetComponent<Collider>().enabled = false;
+        trihead_guy.transform.Find("body").GetComponent<MeshRenderer>().enabled = false;
+        trihead_guy.transform.Find("head1").GetComponent<MeshRenderer>().enabled = false;
+        trihead_guy.transform.Find("head2").GetComponent<MeshRenderer>().enabled = false;
+
 
         yield return new WaitForSeconds(duration);
 
