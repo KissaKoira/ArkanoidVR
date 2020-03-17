@@ -7,6 +7,7 @@ public class PowerUpBiggerRacket : MonoBehaviour
     public float multiplier = 2.0f;
     public float duration = 2.0f;
     public Rigidbody Racket;
+    public gameObject trihead_guy;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,14 +23,19 @@ public class PowerUpBiggerRacket : MonoBehaviour
     //makes racket bigger
     IEnumerator BigRacket(Collider other)
     {
-        //Debug.Log("WHAAT?");
 
         Racket.transform.localScale *= multiplier;
+
+        trihead_guy.Transform.Find("body");
+        GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(duration);
 
         Racket.transform.localScale /= multiplier;
 
+        Destroy(gameObject);
 
     }
+
+
 }
