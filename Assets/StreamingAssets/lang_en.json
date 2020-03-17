@@ -1,0 +1,40 @@
+{
+	"items":
+		[
+			{"key":"lang_value","value":"English"},
+			{"key":"mainmenu","value":"Main Menu"},
+			{"key":"play","value":"Play"},
+			{"key":"options","value":"Options"},
+			{"key":"credits","value":"Credits"},
+			{"key":"exit","value":"Exit"},
+			{"key":"back","value":"Back"},
+			{"key":"vol","value":"Volume"},
+			{"key":"music","value":"Music"},
+			{"key":"sound","value":"Sound"},
+			{"key":"racket","value":"Racket"},
+			{"key":"lang","value":"Language"},
+			{"key":"rh","value":"Right-\nhand"},
+			{"key":"lh","value":"Left-\nhand"},
+			{"key":"right","value":"Right"},
+			{"key":"left","value":"Left"},
+			{"key":"exit_msg","value":"Are you sure you want to\nexit the game?"},
+			{"key":"y","value":"Yes"},
+			{"key":"n","value":"No"},
+			{"key":"paused","value":"Paused"},
+			{"key":"resume","value":"Resume"},
+			{"key":"restart","value":"Restart"},
+			{"key":"quit","value":"Quit"},
+			{"key":"lose","value":"Game Over"},
+			{"key":"win","value":"Victory!"},
+			{"key":"levelclear","value":"Stage Clear!"},
+			{"key":"congrats","value":"Congratulations!"},
+			{"key":"retry","value":"Retry"},
+			{"key":"level","value":"Stage"},
+			{"key":"score","value":"Score"},
+			{"key":"highscore","value":"High Score"},
+			{"key":"start","value":"Start"},
+			{"key":"title_prompt","value":"Press any button"},
+			{"key":"","value":""}
+
+		]
+}
