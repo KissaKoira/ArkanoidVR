@@ -70,10 +70,6 @@ public class testControls : MonoBehaviour
             Vector3 camForward = cam.transform.forward;
 
             ballRB.velocity = Vector3.Reflect(ballRB.velocity, transform.forward) + this.GetComponent<Rigidbody>().velocity;
-            //ballRB.velocity = camForward * 5;
-
-            //Vector3 point = camForward * 10f;
-            //Vector3 point = GameObject.Find("egg").transform.position;
 
             GameObject[] targets = GameObject.FindGameObjectsWithTag("object");
             float closestDir = 0;
@@ -81,23 +77,26 @@ public class testControls : MonoBehaviour
 
             for(int i = 0; i < targets.Length; i++)
             {
-                Vector3 direction = targets[i].transform.position - collision.gameObject.transform.position;
-
-                float dirDiff = Vector3.Dot(camForward, direction);
-
-                if (i == 0)
+                if(targets[i].gameObject.activeSelf == true)
                 {
-                    closestDir = dirDiff;
-                    closestPoint = targets[i].transform.position;
-                }
+                    Vector3 direction = targets[i].transform.position - collision.gameObject.transform.position;
 
-                if (dirDiff > closestDir)
-                {
-                    closestDir = dirDiff;
-                    closestPoint = targets[i].transform.position;
-                }
+                    float dirDiff = Vector3.Dot(camForward, direction);
 
-                Debug.Log(targets[i].gameObject.name);
+                    if (i == 0)
+                    {
+                        closestDir = dirDiff;
+                        closestPoint = targets[i].transform.position;
+                    }
+
+                    if (dirDiff > closestDir)
+                    {
+                        closestDir = dirDiff;
+                        closestPoint = targets[i].transform.position;
+                    }
+
+                    Debug.Log(targets[i].gameObject.name);
+                }
             }
 
             collision.gameObject.GetComponent<ball>().curve(closestPoint);
