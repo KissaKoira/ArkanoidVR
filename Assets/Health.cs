@@ -11,7 +11,7 @@ public HealthBar healthBar;
     void Start()
     {
         currentHealth = maxHealth;
-        HealthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -22,12 +22,16 @@ public HealthBar healthBar;
         {
             TakeDamage(25);
         }
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void TakeDamage(int damage)   
 {
     currentHealth -= damage;
 
-    HealthBar.SetHealth(currentHealth);
+    healthBar.SetHealth(currentHealth);
 }
 }

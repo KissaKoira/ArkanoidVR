@@ -17,7 +17,7 @@ public void SetMaxHealth(int health)
 
     public void SetHealth(int health)
     {
-        slider.Value = health;
+        slider.value = health;
     }
 
 }

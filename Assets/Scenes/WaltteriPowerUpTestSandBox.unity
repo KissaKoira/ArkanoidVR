@@ -5944,6 +5944,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9509ee2cfc2b84ca1bf381cabe9cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 1803773790}
 --- !u!1 &1111100286
 GameObject:
   m_ObjectHideFlags: 0
@@ -10694,6 +10697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e36af947457a641a3e6158b8e9fec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1803773791}
 --- !u!114 &1803773791
 MonoBehaviour:
   m_ObjectHideFlags: 0
