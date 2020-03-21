@@ -14,10 +14,9 @@ public HealthBar healthBar;
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    // Update is called once per frame
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "ball")
+        if (other.gameObject.name == "Ball")
 
         {
             TakeDamage(25);
