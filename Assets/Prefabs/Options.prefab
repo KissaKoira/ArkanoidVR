@@ -305,6 +305,7 @@ MonoBehaviour:
   rightText: {fileID: 4819634584582499299}
   textOnColor: {r: 1, g: 1, b: 1, a: 1}
   textOffColor: {r: 0, g: 0, b: 0, a: 1}
+  highlightColor: {r: 0.5, g: 0, b: 0.5, a: 1}
   speed: 4
 --- !u!1 &1359030591500197817
 GameObject:

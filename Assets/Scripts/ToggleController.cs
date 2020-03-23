@@ -22,6 +22,7 @@ public class ToggleController : MonoBehaviour
     public TextMeshProUGUI rightText;
     public Color textOnColor;
     public Color textOffColor;
+    public Color highlightedColor;
 
     public float speed;
     static float t = 0.0f;
