@@ -19,13 +19,21 @@ public HealthBar healthBar;
         if (other.gameObject.name == "Ball")
 
         {
-            TakeDamage(25);
+            TakeDamage(20);
         }
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }
-    }
+    } 
+
+    /*void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            TakeDamage(20);
+        }
+    } */
 
     void TakeDamage(int damage)   
 {
