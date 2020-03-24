@@ -33,6 +33,7 @@
 			{"key":"level","value":"ステージ"},
 			{"key":"score","value":"スコア"},
 			{"key":"highscore","value":"ハイスコア"},
+			{"key":"health","value":"残り玉"},
 			{"key":"start","value":"開始"},
 			{"key":"title_prompt","value":"ボタンを押してください"},
 			{"key":"","value":""}

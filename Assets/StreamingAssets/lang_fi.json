@@ -33,6 +33,7 @@
 			{"key":"level","value":"Kenttä"},
 			{"key":"score","value":"Pisteet"},
 			{"key":"highscore","value":"Ennätys"},
+			{"key":"health","value":"Elämät"},
 			{"key":"start","value":"Aloita"},
 			{"key":"title_prompt","value":"Paina mitä tahansa nappia"},
 			{"key":"","value":""}

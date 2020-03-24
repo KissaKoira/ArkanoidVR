@@ -9,10 +9,12 @@ public class UIManager : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject optionsUI;
+    public GameObject infoUI;
     public GameObject loseUI;
     public GameObject winUI;
 
     bool menuActive = false;
+    bool infoActive = false;
     
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,34 @@ public class UIManager : MonoBehaviour
         optionsUI.SetActive(false);
     }
 
+    // Method called when checking score
+    public void InfoShow()
+    {
+        if(menuActive == false && infoActive == false)
+        {
+            infoUI.SetActive(true);
+
+            infoActive = true;
+        }
+    }
+
+    // Method called when hiding score
+    public void InfoHide()
+    {
+        /*
+        if(menuActive == true || infoActive == true)
+        {
+            infoUI.SetActive(false);
+
+            infoActive = false;
+        }
+        */
+
+        infoUI.SetActive(false);
+
+        infoActive = false;
+    }
+
     // Method called when going to main menu
     public void MainMenu()
     {
@@ -83,6 +113,23 @@ public class UIManager : MonoBehaviour
             {
                 PauseMenuClose();
             }
+        }
+
+        if(Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2") || Input.GetButtonDown("Fire3"))
+        {
+            if(infoActive == false)
+            {
+                InfoShow();
+            }
+            else
+            {
+                InfoHide();
+            }
+        }
+
+        if(menuActive == true)
+        {
+            InfoHide();
         }
     }
 }
