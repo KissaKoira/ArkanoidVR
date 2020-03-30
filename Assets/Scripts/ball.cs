@@ -18,6 +18,7 @@ public class ball : MonoBehaviour
 
     Vector3 nullPoint = new Vector3(0, 0, 0);
     Vector3 curvePoint = new Vector3(0, 0, 0);
+    public GameObject ballTarget;
 
     int goingRight = 0;
 
@@ -31,13 +32,13 @@ public class ball : MonoBehaviour
         //gravitate towards a set point in front of player
         if (rb.velocity.z < maxVelocity && curvePoint == nullPoint)
         {
-            rb.velocity += Vector3.Normalize(player.transform.position - this.transform.position) * gravity * Time.deltaTime;
+            rb.velocity += Vector3.Normalize(ballTarget.transform.position - this.transform.position) * gravity * Time.deltaTime;
         }
 
         //ONLY FOR TESTING  -  ball snaps to ballpoint when close
-        if (Vector3.Distance(transform.position, player.transform.position) < 3f && curvePoint == nullPoint)
+        if (Vector3.Distance(transform.position, ballTarget.transform.position) < 3f && curvePoint == nullPoint)
         {
-            transform.position = player.transform.position;
+            transform.position = ballTarget.transform.position;
             rb.velocity = new Vector3(0, 0, 0);
         }
 
