@@ -14,7 +14,7 @@ public class ball : MonoBehaviour
     }
 
     float maxVelocity = 50;
-    float gravity = 1f;
+    float gravity = 15f;
 
     Vector3 nullPoint = new Vector3(0, 0, 0);
     Vector3 curvePoint = new Vector3(0, 0, 0);
@@ -30,21 +30,19 @@ public class ball : MonoBehaviour
         }
 
         //gravitate towards a set point in front of player
-        if (rb.velocity.z < maxVelocity && curvePoint == nullPoint)
+        if (rb.velocity.z < maxVelocity)// && curvePoint == nullPoint) //otin tän pois testiks
         {
             rb.velocity += Vector3.Normalize(ballTarget.transform.position - this.transform.position) * gravity * Time.deltaTime;
         }
 
-        //ONLY FOR TESTING  -  ball snaps to ballpoint when close
-        if (Vector3.Distance(transform.position, ballTarget.transform.position) < 3f && curvePoint == nullPoint)
-        {
-            transform.position = ballTarget.transform.position;
-            rb.velocity = new Vector3(0, 0, 0);
-        }
+        //hidastetaan pallon liikettä jatkuvasti sen mukaan kuinka lähellä se on pelaajaa. Sillon tulee smoothisti gravitaatiopisteeseen eikä jää
+        //kiertämään sitä ympyäri eli korvataan sillä aiempi "ball snap".
+        rb.velocity = rb.velocity * (1 - Mathf.Clamp(5.0f - Vector3.Distance(player.transform.position, rb.transform.position), 0.0f, 5.0f) / 250);
 
         //clamp to max velocity
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.y, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.z, -maxVelocity, maxVelocity));
 
+        /*
         //curve towards a point set on contact with racket
         if(curvePoint != nullPoint)
         {
@@ -55,6 +53,7 @@ public class ball : MonoBehaviour
             Vector3 newVelocity = Vector3.RotateTowards(velocity, direction, speed, 0.0f);
             GetComponent<Rigidbody>().velocity = newVelocity;
         }
+        */
     }
 
     Vector3 ballPoint;

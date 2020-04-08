@@ -4,46 +4,14 @@ using UnityEngine;
 
 public class testControls : MonoBehaviour
 {
-    float rotateSpeed = 200;
-    float moveSpeed = 2;
+    float rotateSpeed = 100;
+    float moveSpeed = 20;
 
     public GameObject cam;
 
     void Update()
     {
-        //racket movement
-        transform.Rotate(Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0);
-
-        if (Input.GetButton("Jump"))
-        {
-            //up
-            transform.Rotate(new Vector3(rotateSpeed * Time.deltaTime, 0, 0));
-        }
-
-        if (Input.GetButton("Crouch"))
-        {
-            //down
-            transform.Rotate(new Vector3(rotateSpeed * -1 * Time.deltaTime, 0, 0));
-        }
-
-        //left - right
-        Quaternion camRot = cam.transform.rotation;
-        cam.transform.Rotate(new Vector3(camRot.x, Input.GetAxisRaw("Horizontal"), camRot.z));
-
-        if (Input.GetAxisRaw("Vertical") > 0)
-        {
-            //forward
-            this.GetComponent<Rigidbody>().velocity = transform.forward * moveSpeed;
-        }
-        else if (Input.GetAxisRaw("Vertical") < 0)
-        {
-            //backward
-            this.GetComponent<Rigidbody>().velocity = transform.forward * moveSpeed * -1;
-        }
-        else
-        {
-            this.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        }
+      
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -53,7 +21,11 @@ public class testControls : MonoBehaviour
             Rigidbody ballRB = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 camForward = cam.transform.forward;
 
-            ballRB.velocity = Vector3.Reflect(ballRB.velocity, transform.forward) + this.GetComponent<Rigidbody>().velocity;
+            //hyvä versio vois näyttää kutakuinkun tältä: (mutta reflect bugaa)
+            //ballRB.velocity = Vector3.Reflect(ballRB.velocity, transform.forward).normalized * this.GetComponent<Rigidbody>().velocity.magnitude;
+
+            //tää on vaan testiä varten nyt:
+            ballRB.velocity = this.GetComponent<Rigidbody>().velocity * 3;
 
             GameObject[] targets = GameObject.FindGameObjectsWithTag("object");
             float closestDir = 0;
