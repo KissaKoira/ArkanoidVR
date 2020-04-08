@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class triHeadMovement : MonoBehaviour
 {
+    //how fast NPC moves
     public float walkSpeed;
-
+    //contains all points where NPC can go
     public Transform[] moveToPoint;
 
 
@@ -15,18 +16,19 @@ public class triHeadMovement : MonoBehaviour
     public float startWaitTime;
     public float rotationSpeed;
     private Quaternion lookRotation;
-    private float lookDirection;
+    private Vector3 lookDirection;
 
     void Start()
     {
+        waitTime = startWaitTime;
         randomPoint = Random.Range(0, moveToPoint.Length);
     }
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, moveToPoint[randomPoint].position, walkSpeed * Time.deltaTime);
+        lookDirection = (moveToPoint[randomPoint].position - transform.position).normalized;
 
-        lookDirection = (randomPoint - transform.position).normalized;
+        transform.position = Vector3.MoveTowards(transform.position, moveToPoint[randomPoint].position, walkSpeed * Time.deltaTime);
 
         lookRotation = Quaternion.LookRotation(lookDirection);
 
