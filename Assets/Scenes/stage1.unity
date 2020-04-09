@@ -743,13 +743,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 1
-  moveToPoint:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  moveToPoint: {fileID: 1248656613}
   whenNear: 0.2
   startWaitTime: 1
   rotationSpeed: 1.04
+  angle: 0
+  radius: 0
 --- !u!54 &88623347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4941,8 +4940,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740766841}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6489638, y: 3.858001, z: 4.090918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.06, y: 2.89, z: 0.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1913059667}
@@ -8051,7 +8050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248656612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.821036, y: 4.096, z: 7.060918}
+  m_LocalPosition: {x: -2.917, y: 4.026, z: 9.097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1913059667}
