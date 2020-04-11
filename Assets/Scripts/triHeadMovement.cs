@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Drawing;
 
 public class triHeadMovement : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class triHeadMovement : MonoBehaviour
     public float walkSpeed;
     //contains all points where NPC can go
     public Transform moveToPoint;
+    public Transform Xorigin;
     //private float playerposX = player.transform.position.x;
 
 
@@ -18,19 +20,26 @@ public class triHeadMovement : MonoBehaviour
     public float rotationSpeed;
     private Quaternion lookRotation;
     private Vector3 lookDirection;
-    public float angle;
-    public float radius;
+    private float angle;
+    private float radius;
+    public float radiusMin;
+    public float radiusMax;
+    public float angleMin;
+    public float angleMax; 
     Vector3 newPos;
+    
     
 
     void Start()
     {
+        radius = Random.Range(radiusMin, radiusMax);
+        angle = Random.Range(angleMin, angleMax);
         waitTime = startWaitTime;
+        Xorigin = Xorigin.transform.position;
         //randomPoint = Random.Range(0, moveToPoint.Length);
-        radius = Random.Range(10f, 15f);
-        angle = Random.Range(0f, 360f);
+        
         double degToRads = angle * System.Math.PI / 180f;
-        moveToPoint.position = new Vector3(PointOnCircleX(radius, angle), PointOnCircleY(radius, angle), 0f);
+        moveToPoint.position = new Vector3(PointOnCircleX(radius, angle, Xorigin), 0f, PointOnCircleY(radius, angle));
     }
 
     void Update()
@@ -46,27 +55,30 @@ public class triHeadMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, moveToPoint.position) < whenNear && waitTime <= 0)
         {
             //randomPoint = Random.Range(0, moveToPoint.Length);
+            radius = Random.Range(radiusMin, radiusMax);
+            angle = Random.Range(angleMin, angleMax);
+            moveToPoint.position = new Vector3(PointOnCircleX(radius, angle), 0f, PointOnCircleY(radius, angle));
             waitTime = startWaitTime;
         } else {
             waitTime -= Time.deltaTime;
         }
     }
 
-     private float PointOnCircleX(float r, float rad)
+     private static PointF PointOnCircleX(float r, float rad, System.Drawing.pointF originX)
     {
 
         // Convert from degrees to radians via multiplication by PI/180        
-        float x = (float)(r * System.Math.Cos(rad));
+        float x = (float)(r * System.Math.Cos(rad)) + originX;
         
 
         return x;
 
     }
 
-    private float PointOnCircleY(float r, float rad)
+    private static System.Drawing.pointF PointOnCircleY(float r, float rad, System.Drawing.pointF originY)
     {
 
-    float y = (float)(r * System.Math.Sin(rad)) + 1f;
+    float y = (float)(r * System.Math.Sin(rad)) + originY;
 
     return y;
     }
