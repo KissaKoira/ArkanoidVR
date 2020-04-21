@@ -9,7 +9,7 @@ public class triHeadMovement : MonoBehaviour
     public float walkSpeed;
     //contains all points where NPC can go
     public Transform moveToPoint;
-    public Transform Xorigin;
+    public Vector3 origin;
     //private float playerposX = player.transform.position.x;
 
 
@@ -26,7 +26,7 @@ public class triHeadMovement : MonoBehaviour
     public float radiusMax;
     public float angleMin;
     public float angleMax; 
-    Vector3 newPos;
+    //Vector3 newPos;
     
     
 
@@ -35,11 +35,11 @@ public class triHeadMovement : MonoBehaviour
         radius = Random.Range(radiusMin, radiusMax);
         angle = Random.Range(angleMin, angleMax);
         waitTime = startWaitTime;
-        Xorigin = Xorigin.transform.position;
+        origin = new Vector3(0f, 0f, 0f);
         //randomPoint = Random.Range(0, moveToPoint.Length);
         
         double degToRads = angle * System.Math.PI / 180f;
-        moveToPoint.position = new Vector3(PointOnCircleX(radius, angle, Xorigin), 0f, PointOnCircleY(radius, angle));
+        moveToPoint.position = new Vector3(PointOnCircleX(radius, angle, origin), 0f, PointOnCircleY(radius, angle));
     }
 
     void Update()
@@ -64,7 +64,7 @@ public class triHeadMovement : MonoBehaviour
         }
     }
 
-     private static PointF PointOnCircleX(float r, float rad, System.Drawing.pointF originX)
+     private static System.Drawing.PointF PointOnCircleX(float r, float rad, System.Drawing.PointF originX)
     {
 
         // Convert from degrees to radians via multiplication by PI/180        
@@ -75,7 +75,7 @@ public class triHeadMovement : MonoBehaviour
 
     }
 
-    private static System.Drawing.pointF PointOnCircleY(float r, float rad, System.Drawing.pointF originY)
+    private static float PointOnCircleY(float r, float rad, Transform originY)
     {
 
     float y = (float)(r * System.Math.Sin(rad)) + originY;
