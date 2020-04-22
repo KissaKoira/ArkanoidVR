@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4422076438747834559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 8829625104482817126}
   - component: {fileID: 5557708901178461198}
   m_Layer: 5
-  m_Name: Score Number
+  m_Name: Score Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1074,6 +1074,7 @@ MonoBehaviour:
   infoUI: {fileID: 405810492928705088}
   loseUI: {fileID: 5138113339951649942}
   winUI: {fileID: 5138113339965292016}
+  infoWaitTime: 0.8
 --- !u!1 &5138113341272306002
 GameObject:
   m_ObjectHideFlags: 0

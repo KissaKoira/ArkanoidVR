@@ -15,6 +15,11 @@ public class UIManager : MonoBehaviour
 
     bool menuActive = false;
     bool infoActive = false;
+
+
+    // Time before info disappears
+    [SerializeField]
+    float infoWaitTime = 100.0f;
     
     // Start is called before the first frame update
     void Start()
@@ -74,7 +79,21 @@ public class UIManager : MonoBehaviour
             infoUI.SetActive(true);
 
             infoActive = true;
+
+            //StartCoroutine(InfoTimer());
         }
+    }
+
+    // Method called in order to automatically hide info
+    IEnumerator InfoTimer()
+    {
+        Debug.Log("ennen");
+        yield return new WaitForSecondsRealtime(infoWaitTime);
+        Debug.Log("jälkeen");
+
+        InfoHide();
+
+        StopCoroutine(InfoTimer());
     }
 
     // Method called when hiding score
