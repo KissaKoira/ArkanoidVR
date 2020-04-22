@@ -5,38 +5,46 @@ using UnityEngine;
 public class PowerUpCheck : MonoBehaviour
 {
 
-public PowerUpHitSphere pUSph;
-public PowerUpHitCylinder pUCyl;
-public PowerUpHitCube pUHCube;
-public Rigidbody BallToCopy;
-bool functionCalled = false;
-bool triplicateCalled = false;
+    public PowerUpHitSphere pUSph;
+    public PowerUpHitCylinder pUCyl;
+    public PowerUpHitCube pUHCube;
+    public Rigidbody BallToCopy;
+    public GameObject triHead1;
+    public GameObject triHead2;
+    public GameObject triHead3;
+    bool functionCalled = false;
+    bool triplicateCalled = false;
 
     void Update()
     {
-        //jos sylinteriin, palloon ja kuutioon on osuttu
+        //if every of the three objects is hit
         if(pUSph.IsHitSphere && pUCyl.IsHitCylinder && pUHCube.IsHitCube && !functionCalled)
         {
             Triplicate();
-            //should change booleans back to false but does not do that
+            //this boolean makes sure that triplicate can't get into infinite loop
             functionCalled = true;
         }
     }
 
-//Triplicate makes more balls but its infinite right now because upper if wont work
+    //this function makes two clones of the original ball
     void Triplicate()
 
     {
         Rigidbody clone;
-        if(!triplicateCalled)
+        if (!triplicateCalled)
+            Destroy(triHead1);
+            Destroy(triHead2);
+            Destroy(triHead3);
 
 
         for (int i = 0; i < 2; i++)
         {
-           clone = Instantiate(BallToCopy, new Vector3(i * 0.5F, 0f, 0f), Quaternion.identity);
+           clone = Instantiate(BallToCopy, transform.position, Quaternion.identity);
+                //renames all clones to name Ball
+                clone.name = "Ball";
 
-            //yield return new WaitForSeconds(WaitTime);
         triplicateCalled = true;
+
         }
     } 
 }
