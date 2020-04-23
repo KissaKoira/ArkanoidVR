@@ -14,7 +14,7 @@ public class ball : MonoBehaviour
     }
 
     float maxVelocity = 50;
-    float gravity = 1f;
+    float gravity = 2f;
 
     Vector3 nullPoint = new Vector3(0, 0, 0);
     Vector3 curvePoint = new Vector3(0, 0, 0);
@@ -24,16 +24,11 @@ public class ball : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("test"))
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(0, -10, 0);
-        }
-
         //gravitate towards a set point in front of player
-        if (rb.velocity.z < maxVelocity && curvePoint == nullPoint)
+        /*if (rb.velocity.z < maxVelocity && curvePoint == nullPoint)
         {
-            rb.velocity += Vector3.Normalize(ballTarget.transform.position - this.transform.position) * gravity * Time.deltaTime;
-        }
+            rb.velocity += Vector3.Normalize(ballTarget.transform.position - this.transform.position) * Time.deltaTime * gravity;
+        }*/
 
         //ONLY FOR TESTING  -  ball snaps to ballpoint when close
         if (Vector3.Distance(transform.position, ballTarget.transform.position) < 3f && curvePoint == nullPoint)
@@ -83,23 +78,24 @@ public class ball : MonoBehaviour
 
             ballPoint = this.transform.position;
         }
-        else if (collision.gameObject.tag == "object")
+        else if (collision.gameObject.tag == "object" || collision.transform.parent.gameObject.tag == "object")
         {
-            Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
+            /*Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
             Vector3 reflected = Vector3.Reflect(rb.velocity, normal);
 
             rb.velocity = new Vector3(reflected.x, rb.velocity.y, reflected.z) * bounciness;
 
-            ballPoint = this.transform.position;
+            ballPoint = this.transform.position;*/
 
-            if (collision.gameObject.name.Contains("trihead guy"))
+            this.transform.position = ballTarget.transform.position;
+
+            collision.gameObject.SetActive(false);
+
+            if(collision.transform.parent.gameObject.tag == "object")
             {
                 collision.transform.parent.gameObject.SetActive(false);
             }
-
-            collision.gameObject.SetActive(false);
             
-
             curvePoint = nullPoint;
         }
     }
