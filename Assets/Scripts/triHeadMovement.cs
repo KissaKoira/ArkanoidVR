@@ -27,9 +27,9 @@ public class triHeadMovement : MonoBehaviour
     {
         waitTime = startWaitTime;
         randomPoint = Random.Range(0, moveToPoint.Length);
-        radius = Random.Range(10f, 15f);
-        angle = Random.Range(0f, 360f);
-        double radsToDeg = angle * System.Math.PI / 180f;
+        //radius = Random.Range(10f, 15f);
+        //angle = Random.Range(0f, 360f);
+        //double radsToDeg = angle * System.Math.PI / 180f;
     }
 
     void Update()
