@@ -11,14 +11,17 @@ public class triHeadMovement : MonoBehaviour
 
 
     private int randomPoint;
+    //How near of the moving point trihead guy is allowed to go
     public float whenNear;
     private float waitTime;
+    //How long trihead guy will stay on the point
     public float startWaitTime;
+    //How fast trihead guy turns to next move point
     public float rotationSpeed;
     private Quaternion lookRotation;
     private Vector3 lookDirection;
-    public float angle;
-    public float radius;
+    //private float angle;
+    //private float radius;
 
     void Start()
     {

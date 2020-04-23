@@ -311,11 +311,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7300092044297123739}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1995208, y: 12.186195, z: 3.774979}
-  m_Center: {x: -0.080207765, y: 6.5197825, z: -0.47954458}
+  m_Size: {x: 3.8114605, y: 12.186195, z: 4.4597635}
+  m_Center: {x: -0.16073005, y: 6.5197825, z: -0.47690427}
 --- !u!65 &1616455950712914186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -324,11 +324,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7300092044297123739}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1995208, y: 12.186195, z: 3.774979}
-  m_Center: {x: -0.080207765, y: 6.5197825, z: -0.47954458}
+  m_Size: {x: 3.8114605, y: 12.186195, z: 4.4597635}
+  m_Center: {x: -0.16073005, y: 6.5197825, z: -0.47690427}
 --- !u!114 &1616455950712914187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,15 +357,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda53a32da6b6da4b935e53146987d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 1
+  walkSpeed: 0.67
   moveToPoint:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  whenNear: 0.2
-  startWaitTime: 1
-  rotationSpeed: 2.47
-  angle: 0
-  radius: 0
+  whenNear: 0.52
+  startWaitTime: 0.34
+  rotationSpeed: 3.07
+  angle: 85.33
+  radius: 12.403281
