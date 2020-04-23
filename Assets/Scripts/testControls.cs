@@ -58,6 +58,7 @@ public class testControls : MonoBehaviour
             GameObject[] targets = GameObject.FindGameObjectsWithTag("object");
             float closestDir = 0;
             Vector3 closestPoint = new Vector3();
+            string closestObject = "";
 
             for(int i = 0; i < targets.Length; i++)
             {
@@ -71,15 +72,33 @@ public class testControls : MonoBehaviour
                     {
                         closestDir = dirDiff;
                         closestPoint = targets[i].transform.position;
+                        closestObject = targets[i].gameObject.name;
                     }
 
                     if (dirDiff > closestDir)
                     {
                         closestDir = dirDiff;
                         closestPoint = targets[i].transform.position;
+                        closestObject = targets[i].gameObject.name;
                     }
 
+                    //log closest object's name
                     Debug.Log(targets[i].gameObject.name);
+                }
+            }
+
+            bool loop = true;
+
+            while (loop)
+            {
+                RaycastHit hit;
+                Vector3 direction = closestPoint - cam.transform.position;
+
+                if (Physics.Raycast(cam.transform.position, direction, out hit, Mathf.Infinity) && hit.collider.gameObject.name == closestObject)
+                {
+                    Debug.Log("raycast hit " + hit.collider.gameObject.name);
+
+                    closestPoint = hit.point;
                 }
             }
 

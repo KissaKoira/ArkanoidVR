@@ -24,11 +24,6 @@ public class ball : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("test"))
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(0, -10, 0);
-        }
-
         //gravitate towards a set point in front of player
         if (rb.velocity.z < maxVelocity && curvePoint == nullPoint)
         {
@@ -36,11 +31,11 @@ public class ball : MonoBehaviour
         }
 
         //ONLY FOR TESTING  -  ball snaps to ballpoint when close
-        if (Vector3.Distance(transform.position, ballTarget.transform.position) < 3f && curvePoint == nullPoint)
+        /*if (Vector3.Distance(transform.position, ballTarget.transform.position) < 3f && curvePoint == nullPoint)
         {
             transform.position = ballTarget.transform.position;
             rb.velocity = new Vector3(0, 0, 0);
-        }
+        }*/
 
         //clamp to max velocity
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.y, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.z, -maxVelocity, maxVelocity));
@@ -83,7 +78,7 @@ public class ball : MonoBehaviour
 
             ballPoint = this.transform.position;
         }
-        else if (collision.gameObject.tag == "object")
+        else if (collision.gameObject.tag == "object" || collision.transform.parent.gameObject.tag == "object")
         {
             Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
             Vector3 reflected = Vector3.Reflect(rb.velocity, normal);
@@ -92,14 +87,8 @@ public class ball : MonoBehaviour
 
             ballPoint = this.transform.position;
 
-            if (collision.gameObject.name.Contains("trihead guy"))
-            {
-                collision.transform.parent.gameObject.SetActive(false);
-            }
-
             collision.gameObject.SetActive(false);
             
-
             curvePoint = nullPoint;
         }
     }
