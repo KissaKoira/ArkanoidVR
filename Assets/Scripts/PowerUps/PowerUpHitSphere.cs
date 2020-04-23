@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class PowerUpHitSphere : MonoBehaviour
 {
-public bool IsHitSphere = false;
-public static PowerUpHitSphere instance;
+    public bool IsHitSphere = false;
+    public static PowerUpHitSphere instance;
+    public GameObject triHead;
 
     public void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == "Ball")
         {
             IsHitSphere = true;
-            //StartCoroutine (Triplicate());
-            Debug.Log("Working!");
-        }
-}
-void start()
-{
-    instance = this;
-}
 
-}
+            //Hides the triheadguy when ball has hit to it
+            foreach (MeshRenderer r in triHead.GetComponentsInChildren<Renderer>())
+            {
+                r.enabled = false;
+            }
+        }
+    }
+    void start()
+    {
+        instance = this;
+    }
+   
+
+    }

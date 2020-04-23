@@ -16,25 +16,8 @@ public class PowerUpDublicate : MonoBehaviour
         if(collision.gameObject.tag == "Ball")
         {
             IsHit = true;
-            //StartCoroutine (Triplicate());
-            Debug.Log("Working!");
         }
 
     }
-    
-    /*IEnumerator Triplicate()
-    {
-        Rigidbody clone;
-
-        for (int i = 0; i < 2; i++)
-        {
-           clone = Instantiate(BallToCopy, new Vector3(i * 0.5F, 0f, 0f), Quaternion.identity);
-
-            yield return new WaitForSeconds(WaitTime);
-        }
-    
-
-    
-    } */
 
 }

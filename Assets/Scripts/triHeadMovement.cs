@@ -11,17 +11,25 @@ public class triHeadMovement : MonoBehaviour
 
 
     private int randomPoint;
+    //How near of the moving point trihead guy is allowed to go
     public float whenNear;
     private float waitTime;
+    //How long trihead guy will stay on the point
     public float startWaitTime;
+    //How fast trihead guy turns to next move point
     public float rotationSpeed;
     private Quaternion lookRotation;
     private Vector3 lookDirection;
+    //private float angle;
+    //private float radius;
 
     void Start()
     {
         waitTime = startWaitTime;
         randomPoint = Random.Range(0, moveToPoint.Length);
+        //radius = Random.Range(10f, 15f);
+        //angle = Random.Range(0f, 360f);
+        //double radsToDeg = angle * System.Math.PI / 180f;
     }
 
     void Update()
@@ -38,7 +46,9 @@ public class triHeadMovement : MonoBehaviour
         {
             randomPoint = Random.Range(0, moveToPoint.Length);
             waitTime = startWaitTime;
-        } else {
+        }
+        else
+        {
             waitTime -= Time.deltaTime;
         }
     }
