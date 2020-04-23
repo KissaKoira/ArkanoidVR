@@ -60,9 +60,9 @@ public class testControls : MonoBehaviour
             Vector3 closestPoint = new Vector3();
             string closestObject = "";
 
-            for(int i = 0; i < targets.Length; i++)
+            for (int i = 0; i < targets.Length; i++)
             {
-                if(targets[i].gameObject.activeSelf == true)
+                if (targets[i].gameObject.activeSelf == true)
                 {
                     Vector3 direction = targets[i].transform.position - collision.gameObject.transform.position;
 
@@ -82,24 +82,31 @@ public class testControls : MonoBehaviour
                         closestObject = targets[i].gameObject.name;
                     }
 
-                    //log closest object's name
                     Debug.Log(targets[i].gameObject.name);
                 }
             }
 
-            bool loop = true;
+            bool looping = true;
+            Vector3 directionB = closestPoint - cam.transform.position;
+            Vector3 pointB;
+            float counter = 100;
 
-            while (loop)
+            while (looping && counter > 0)
             {
                 RaycastHit hit;
-                Vector3 direction = closestPoint - cam.transform.position;
 
-                if (Physics.Raycast(cam.transform.position, direction, out hit, Mathf.Infinity) && hit.collider.gameObject.name == closestObject)
+                if (Physics.Raycast(cam.transform.position, directionB, out hit, Mathf.Infinity) && hit.collider.gameObject.name == closestObject)
                 {
-                    Debug.Log("raycast hit " + hit.collider.gameObject.name);
-
                     closestPoint = hit.point;
+
+                    directionB = Vector3.RotateTowards(directionB, camForward, 1, 0.0f);
                 }
+                else
+                {
+                    looping = false;
+                }
+
+                counter--;
             }
 
             collision.gameObject.GetComponent<ball>().curve(closestPoint);
