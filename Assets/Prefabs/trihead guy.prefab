@@ -301,7 +301,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 52
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!65 &1616455950712914196
 BoxCollider:
@@ -366,6 +366,6 @@ MonoBehaviour:
   - {fileID: 0}
   whenNear: 0.2
   startWaitTime: 1
-  rotationSpeed: 1.04
+  rotationSpeed: 2.47
   angle: 0
   radius: 0
