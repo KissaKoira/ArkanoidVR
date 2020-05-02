@@ -12,6 +12,7 @@ TagManager:
   - surface_reversesphere
   - racket
   - object
+  - triHead
   layers:
   - Default
   - TransparentFX

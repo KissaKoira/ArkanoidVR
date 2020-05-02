@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 1616455950712914185}
   m_Layer: 0
   m_Name: trihead guy
-  m_TagString: object
+  m_TagString: triHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,5 +367,3 @@ MonoBehaviour:
   whenNear: 0.52
   startWaitTime: 0.34
   rotationSpeed: 3.07
-  angle: 85.33
-  radius: 12.403281

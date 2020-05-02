@@ -9,7 +9,7 @@ public class triHeadMovement : MonoBehaviour
     //contains all points where NPC can go
     public Transform[] moveToPoint;
 
-
+    public GameObject partEffect;
     private int randomPoint;
     //How near of the moving point trihead guy is allowed to go
     public float whenNear;
@@ -51,5 +51,18 @@ public class triHeadMovement : MonoBehaviour
         {
             waitTime -= Time.deltaTime;
         }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Ball")
+        {
+            Flames();
+        }
+    }
+
+   public void Flames()
+    {
+        GameObject flames = Instantiate(partEffect, transform.position, Quaternion.identity);
+        partEffect.GetComponent <ParticleSystem>().Play();
     }
 }
