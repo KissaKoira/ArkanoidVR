@@ -48,8 +48,10 @@ public class testControls : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == "Ball")
+        if (collision.gameObject.name.Contains("Ball"))
         {
+            GameObject.Find("BallPoint").GetComponent<ballController>().spawnBall();
+
             Rigidbody ballRB = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 camForward = cam.transform.forward;
 
