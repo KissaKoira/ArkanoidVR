@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//POWERUP TO MAKE BALL BIGGER
 public class PowerUp : MonoBehaviour
 {
     public float multiplier = 1.5f;
@@ -17,6 +18,7 @@ public class PowerUp : MonoBehaviour
         }
 
     }
+    //makes ball bigger
     IEnumerator Pickup(Collider Ball)
     {
 

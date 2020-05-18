@@ -14,33 +14,38 @@ public class ball : MonoBehaviour
     }
 
     float maxVelocity = 50;
-    float gravity = 15f;
+    float gravity = 2f;
 
     Vector3 nullPoint = new Vector3(0, 0, 0);
     Vector3 curvePoint = new Vector3(0, 0, 0);
+    public GameObject ballTarget;
 
     int goingRight = 0;
 
     private void Update()
     {
-        if (Input.GetButtonDown("test"))
+        //gravitate towards a set point in front of player
+        /*if (rb.velocity.z < maxVelocity && curvePoint == nullPoint)
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(0, -10, 0);
+            rb.velocity += Vector3.Normalize(ballTarget.transform.position - this.transform.position) * Time.deltaTime * gravity;
+        }*/
+
+        //ONLY FOR TESTING  -  ball snaps to ballpoint when close
+        if (Vector3.Distance(transform.position, ballTarget.transform.position) < 3f && curvePoint == nullPoint)
+        {
+            transform.position = ballTarget.transform.position;
+            rb.velocity = new Vector3(0, 0, 0);
         }
 
-        if (rb.velocity.z < maxVelocity)
-        {
-            //rb.velocity -= Vector3.Normalize(this.transform.position - player.transform.position) * gravity * Time.deltaTime;
-        }
-
+        //clamp to max velocity
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.y, -maxVelocity, maxVelocity), Mathf.Clamp(rb.velocity.z, -maxVelocity, maxVelocity));
 
         //curve towards a point set on contact with racket
-        if(curvePoint != nullPoint)
+        if (curvePoint != nullPoint)
         {
             Vector3 direction = curvePoint - transform.position;
             Vector3 velocity = GetComponent<Rigidbody>().velocity;
-            float speed = velocity.magnitude * 0.3f * Time.deltaTime;
+            float speed = velocity.magnitude * 0.4f * Time.deltaTime;
 
             Vector3 newVelocity = Vector3.RotateTowards(velocity, direction, speed, 0.0f);
             GetComponent<Rigidbody>().velocity = newVelocity;
@@ -56,7 +61,7 @@ public class ball : MonoBehaviour
         {
             rb.velocity = Vector3.Reflect(rb.velocity, collision.transform.forward) * bounciness;
         }
-        else if(collision.gameObject.tag == "surface_cylinder")
+        else if (collision.gameObject.tag == "surface_cylinder")
         {
             Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
             Vector3 reflected = Vector3.Reflect(rb.velocity, normal);
@@ -72,6 +77,26 @@ public class ball : MonoBehaviour
             rb.velocity = Vector3.Reflect(rb.velocity, normal) * bounciness;
 
             ballPoint = this.transform.position;
+        }
+        else if (collision.gameObject.tag == "object" || collision.transform.parent.gameObject.tag == "object")
+        {
+            /*Vector3 normal = Vector3.Normalize(this.transform.position - collision.transform.position);
+            Vector3 reflected = Vector3.Reflect(rb.velocity, normal);
+
+            rb.velocity = new Vector3(reflected.x, rb.velocity.y, reflected.z) * bounciness;
+
+            ballPoint = this.transform.position;*/
+
+            this.transform.position = ballTarget.transform.position;
+
+            collision.gameObject.SetActive(false);
+
+            if (collision.transform.parent.gameObject.tag == "object")
+            {
+                collision.transform.parent.gameObject.SetActive(false);
+            }
+
+            curvePoint = nullPoint;
         }
     }
 

@@ -12,16 +12,7 @@ public class testControls : MonoBehaviour
     void Update()
     {
         //racket movement
-        if (Input.GetButton("Fire2"))
-        {
-            Quaternion camRot = cam.transform.rotation;
-            cam.transform.Rotate(new Vector3(camRot.x, Input.GetAxis("Mouse X"), camRot.z));
-        }
-        else
-        {
-            transform.position += new Vector3(Input.GetAxis("Mouse X") * 0.05f, Input.GetAxis("Mouse Y") * 0.05f, 0);
-        }
-        
+        transform.Rotate(Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0);
 
         if (Input.GetButton("Jump"))
         {
@@ -35,16 +26,9 @@ public class testControls : MonoBehaviour
             transform.Rotate(new Vector3(rotateSpeed * -1 * Time.deltaTime, 0, 0));
         }
 
-        if (Input.GetAxisRaw("Horizontal") > 0)
-        {
-            //right
-            transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0));
-        }
-        else if(Input.GetAxisRaw("Horizontal") < 0)
-        {
-            //left
-            transform.Rotate(new Vector3(0, rotateSpeed * -1 * Time.deltaTime, 0));
-        }
+        //left - right
+        Quaternion camRot = cam.transform.rotation;
+        cam.transform.Rotate(new Vector3(camRot.x, Input.GetAxisRaw("Horizontal"), camRot.z));
 
         if (Input.GetAxisRaw("Vertical") > 0)
         {
@@ -70,34 +54,59 @@ public class testControls : MonoBehaviour
             Vector3 camForward = cam.transform.forward;
 
             ballRB.velocity = Vector3.Reflect(ballRB.velocity, transform.forward) + this.GetComponent<Rigidbody>().velocity;
-            //ballRB.velocity = camForward * 5;
-
-            //Vector3 point = camForward * 10f;
-            //Vector3 point = GameObject.Find("egg").transform.position;
 
             GameObject[] targets = GameObject.FindGameObjectsWithTag("object");
             float closestDir = 0;
             Vector3 closestPoint = new Vector3();
+            string closestObject = "";
 
-            for(int i = 0; i < targets.Length; i++)
+            for (int i = 0; i < targets.Length; i++)
             {
-                Vector3 direction = targets[i].transform.position - collision.gameObject.transform.position;
-
-                float dirDiff = Vector3.Dot(camForward, direction);
-
-                if (i == 0)
+                if (targets[i].gameObject.activeSelf == true)
                 {
-                    closestDir = dirDiff;
-                    closestPoint = targets[i].transform.position;
+                    Vector3 direction = targets[i].transform.position - collision.gameObject.transform.position;
+
+                    float dirDiff = Vector3.Dot(camForward, direction);
+
+                    if (i == 0)
+                    {
+                        closestDir = dirDiff;
+                        closestPoint = targets[i].transform.position;
+                        closestObject = targets[i].gameObject.name;
+                    }
+
+                    if (dirDiff > closestDir)
+                    {
+                        closestDir = dirDiff;
+                        closestPoint = targets[i].transform.position;
+                        closestObject = targets[i].gameObject.name;
+                    }
+
+                    Debug.Log(targets[i].gameObject.name);
+                }
+            }
+
+            bool looping = true;
+            Vector3 directionB = closestPoint - cam.transform.position;
+            Vector3 pointB;
+            float counter = 100;
+
+            while (looping && counter > 0)
+            {
+                RaycastHit hit;
+
+                if (Physics.Raycast(cam.transform.position, directionB, out hit, Mathf.Infinity) && hit.collider.gameObject.name == closestObject)
+                {
+                    closestPoint = hit.point;
+
+                    directionB = Vector3.RotateTowards(directionB, camForward, 1, 0.0f);
+                }
+                else
+                {
+                    looping = false;
                 }
 
-                if (dirDiff > closestDir)
-                {
-                    closestDir = dirDiff;
-                    closestPoint = targets[i].transform.position;
-                }
-
-                Debug.Log(targets[i].gameObject.name);
+                counter--;
             }
 
             collision.gameObject.GetComponent<ball>().curve(closestPoint);

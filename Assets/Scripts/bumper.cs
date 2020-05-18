@@ -8,7 +8,7 @@ public class bumper : MonoBehaviour
     {
         if(other.gameObject.name == "Ball")
         {
-            GetComponent<Animator>().SetTrigger("hit");
+           // GetComponent<Animator>().SetTrigger("hit");
         }
 
         other.GetComponent<Rigidbody>().velocity *= 1.5f;
