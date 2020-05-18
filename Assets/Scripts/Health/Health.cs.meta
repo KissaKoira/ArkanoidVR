@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Scripts/ToggleController.cs.meta
-guid: d9b12e2e78f218b47a8a6fbaa7d135d2
-=======
-guid: ec9509ee2cfc2b84ca1bf381cabe9cb3
->>>>>>> master:Assets/Scripts/Health/Health.cs.meta
+guid: 0e71eaca29131014fb09c584828f7b41
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

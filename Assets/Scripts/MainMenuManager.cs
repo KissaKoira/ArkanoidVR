@@ -94,8 +94,8 @@ public class MainMenuManager : MonoBehaviour
     // Method called when closing the game
     public void TerminateGame()
     {
-        SceneManager.LoadScene("Title Screen"); // For use inside Unity
-        //Application.Quit(); // For use in actual builds
+        //SceneManager.LoadScene("Title Screen"); // For use inside Unity
+        Application.Quit(); // For use in actual builds
     }
 
     // Update is called once per frame
